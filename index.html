@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipsoi AI - Polok 5.8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --glass-bg: rgba(255, 255, 255, 0.45);
+        --glass-border: rgba(255, 255, 255, 0.3);
+        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+      }
+      
+      body {
+        font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+        background-color: #f0f4f8;
+        background-attachment: fixed;
+        color: #1a1a1a;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      /* Ultra Modern Mesh Background */
+      .mesh-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #f0f4f8;
+        background-image: 
+          radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+          radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%), 
+          radial-gradient(at 0% 50%, hsla(225,39%,30%,1) 0, transparent 50%), 
+          radial-gradient(at 50% 50%, hsla(225,39%,30%,1) 0, transparent 50%), 
+          radial-gradient(at 100% 50%, hsla(225,39%,30%,1) 0, transparent 50%), 
+          radial-gradient(at 0% 100%, hsla(339,49%,30%,1) 0, transparent 50%), 
+          radial-gradient(at 50% 100%, hsla(225,39%,30%,1) 0, transparent 50%), 
+          radial-gradient(at 100% 100%, hsla(253,16%,7%,1) 0, transparent 50%);
+        opacity: 0.08;
+      }
+
+      .animated-blob {
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        filter: blur(80px);
+        z-index: -1;
+        border-radius: 50%;
+        opacity: 0.4;
+        animation: blob-float 20s infinite alternate;
+      }
+
+      @keyframes blob-float {
+        from { transform: translate(0, 0) scale(1); }
+        to { transform: translate(100px, 100px) scale(1.2); }
+      }
+
+      .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+      }
+
+      /* Markdown & Code Style */
+      .prose {
+        max-width: none;
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+      .prose code {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.9em;
+      }
+      .prose pre {
+        background: #1e1e2e;
+        color: #cdd6f4;
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin: 1rem 0;
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+      }
+
+      /* Input Focus Glow */
+      .input-glow:focus-within {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+        "react-markdown": "https://esm.sh/react-markdown@^9.0.0",
+        "remark-gfm": "https://esm.sh/remark-gfm@^4.0.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div class="mesh-bg"></div>
+    <div class="animated-blob bg-indigo-200" style="top: -10%; left: -10%;"></div>
+    <div class="animated-blob bg-purple-200" style="bottom: -10%; right: -10%; animation-delay: -5s;"></div>
+    <div id="root"></div>
+  </body>
+</html>
