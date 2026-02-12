@@ -1,9 +1,9 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Role, Message, ChatState } from './types';
-import ChatMessage from './components/ChatMessage';
-import ChatInput from './components/ChatInput';
-import { sendMessageStream, ModelType } from './services/deepseekService';
+import { Role, Message, ChatState } from './types.ts';
+import ChatMessage from './components/ChatMessage.tsx';
+import ChatInput from './components/ChatInput.tsx';
+import { sendMessageStream, ModelType } from './services/deepseekService.ts';
 
 const App: React.FC = () => {
   const [selectedModel, setSelectedModel] = useState<ModelType>('pro');

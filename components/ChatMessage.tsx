@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Message, Role } from '../types';
+import { Message, Role } from '../types.ts';
 
 interface ChatMessageProps {
   message: Message;
