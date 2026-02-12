@@ -140,12 +140,20 @@ const App: React.FC = () => {
     }
   };
 
+  const handleReload = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="flex flex-col h-screen overflow-hidden">
       {/* Immersive Header */}
       <header className="glass border-b border-white/40 px-6 py-4 flex items-center justify-between sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <div className="relative group">
+          <div 
+            className="relative group cursor-pointer" 
+            onClick={handleReload}
+            title="Reload App"
+          >
             <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <img 
               src="https://play-lh.googleusercontent.com/mk999AcHEy0JMt4TJCPW_XQL0nwaC83h7rtkgSwYmyjhq-oyECCnyS6kFiWWgAQrIV8=w480-h960-rw" 
@@ -153,7 +161,10 @@ const App: React.FC = () => {
               className="relative w-10 h-10 rounded-xl shadow-lg object-cover"
             />
           </div>
-          <h1 className="font-extrabold text-slate-900 text-xl tracking-tight">
+          <h1 
+            className="font-extrabold text-slate-900 text-xl tracking-tight cursor-pointer"
+            onClick={handleReload}
+          >
             Tipsoi <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">AI</span>
           </h1>
         </div>
